@@ -1,8 +1,9 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, HttpResponse
+# from django.views.decorators.csrf import csrf_protect
 from django.views.generic import View 
 from pytube import YouTube
 
-# Create your views here.
+# Create your views here
 class home(View):
     def __init__(self, url=None):
         self.url = url
@@ -32,7 +33,9 @@ class home(View):
             video = YouTube(self.url)
             stream = [x for x in video.streams.filter(progressive=True)]
             video_qual = video.streams[int(request.POST.get('download-vid')) - 1]
-            video_qual.download(output_path='Downloads')
-            return redirect('home')
+            # video_qual.download(output_path='C:\\Users\\user\\Downloads')
+            
+        return redirect('home')
 
-        return render(request,'index.html')
+# return render(request,'index.html')
+    

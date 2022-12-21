@@ -26,7 +26,7 @@ secret_key = SECRET_KEY
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.ngrok.io']
 
 
 # Application definition
@@ -142,3 +142,15 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# settings
+# from django import default_headers
+
+# CORS_ALLOWED_ORIGINS = [
+#     "https://de03-102-88-34-91.eu.ngrok.io/",
+#     "https://de03-102-88-34-91.eu.ngrok.io/",
+# ]
+CSRF_TRUSTED_ORIGINS = [
+    "https://e886-102-89-22-113.ngrok.io",
+    "https://e886-102-89-22-113.ngrok.io",
+    ]
