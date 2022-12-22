@@ -26,7 +26,8 @@ secret_key = SECRET_KEY
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.ngrok.io']
+ALLOWED_HOSTS = ['*']
+# ['localhost', '127.0.0.1', '.ngrok.io']
 
 
 # Application definition
@@ -150,7 +151,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #     "https://de03-102-88-34-91.eu.ngrok.io/",
 #     "https://de03-102-88-34-91.eu.ngrok.io/",
 # ]
-CSRF_TRUSTED_ORIGINS = [
-    "https://e886-102-89-22-113.ngrok.io",
-    "https://e886-102-89-22-113.ngrok.io",
-    ]
+# CSRF_TRUSTED_ORIGINS = [
+#     "https://e886-102-89-22-113.ngrok.io",
+#     "https://e886-102-89-22-113.ngrok.io",
+#     ]

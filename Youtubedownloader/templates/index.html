@@ -33,7 +33,7 @@
         <div class="flex flex-col md:flex-row   mx-auto ">
         <!-- for downloading the video  and resolution-->
         {% for x in stream %}
-            {{x.resolution}} <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit" name="download-vid" value="{{forloop.counter}}" download>Download</button>
+            {{x.resolution}} <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit" name="download-vid" value="{{forloop.counter}}">Download</button>
         {% endfor %}
         <br><br>
         </div>
