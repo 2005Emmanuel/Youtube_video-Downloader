@@ -155,3 +155,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #     "https://e886-102-89-22-113.ngrok.io",
 #     "https://e886-102-89-22-113.ngrok.io",
 #     ]
+
+PYTHON_VERSION = 3.7
