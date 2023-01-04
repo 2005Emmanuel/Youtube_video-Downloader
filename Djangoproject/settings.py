@@ -151,10 +151,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #     "https://de03-102-88-34-91.eu.ngrok.io/",
 #     "https://de03-102-88-34-91.eu.ngrok.io/",
 # ]
-# CSRF_TRUSTED_ORIGINS = [
-#     "https://e886-102-89-22-113.ngrok.io",
-#     "https://e886-102-89-22-113.ngrok.io",
-#     ]
+CSRF_TRUSTED_ORIGINS = [
+    "https://youtubevideo-downloader-production.up.railway.app",
+    "https://youtubevideo-downloader-production.up.railway.app",
+    ]
 
 
 PYTHON_VERSION = 3.7
