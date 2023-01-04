@@ -33,7 +33,7 @@ class home(View):
             video = YouTube(self.url)
             stream = [x for x in video.streams.filter(progressive=True)]
             video_qual = video.streams[int(request.POST.get('download-vid')) - 1]
-            video_qual.download(output_path='C:\\Users\\user\\Downloads') 
+            video_qual.download(output_path='\\Downloads\\video.mp4') 
             
         return redirect('home')
 
