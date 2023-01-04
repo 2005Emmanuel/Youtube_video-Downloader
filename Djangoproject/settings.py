@@ -44,7 +44,6 @@ INSTALLED_APPS = [
     'theme',
     'django_browser_reload',
     'crispy_forms',
-    'cloudinary',
 ]
 
 TAILWIND_APP_NAME = 'theme'
@@ -56,6 +55,7 @@ NPM_BIN_PATH = r"C:\Program Files\nodejs\npm.cmd"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -133,19 +133,14 @@ USE_TZ = True
 
 import os
 STATIC_URL = 'static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'Youtubedownloader/static')
+# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, 'Youtubedownloader/static')
 
-]
-import cloudinary
-import cloudinary.uploader
-import cloudinary.api
-cloudinary.config( 
-  cloud_name = "dbkiycdzw", 
-  api_key = "494285335831927", 
-  api_secret = "OmckRe2v3DMwE6kQPCVJp8KTa-c" 
-)
+# ]
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
