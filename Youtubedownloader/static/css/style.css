@@ -14,7 +14,7 @@ button {
 	padding-bottom: 9px;
 	padding-left: 25px;
 	padding-right: 25px;
-	background-color: rgba(0, 136, 169, 1);
+	background-color: blue;
 	border: none;
 	border-radius: 50px;
 	cursor: pointer;
@@ -137,7 +137,7 @@ button:hover {
 }
 
 table {
-	border: 1px solid #ccc;
+	border: 1px solid rgb(13, 11, 11);
 	border-collapse: collapse;
 	margin: 0;
 	margin-top: 50px;

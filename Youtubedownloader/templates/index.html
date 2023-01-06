@@ -9,13 +9,13 @@
     <link  href="{% static "styles.min.css" %}">
     <title>Ytube download</title>
 	{% tailwind_css %}   
-<body class=' bg-[#03071e] text-white'>
+<body class=' text-white' style="background-color:#03071e">
 <div class="mx-auto text-center bg-blue-700 ">
-	{%load static %}
-	<img class='class=" mx-auto ' src="{% static 'images/youtube-logo-png-31812.png'%}" style='width:20%; margin-top:10%;'>
 	<form class="shadow-md rounded px-8 pt-6 pb-8 mb-4   "action="download/" class="search-form" method="get">
+		{%load static %}
+		<img class='class=" mx-auto ' src="{% static 'images/youtube-logo-png-31812.png'%}" style='width:20%; margin-top:10%;'>
 		<div class="heading">
-			Enter Yt Video link here	
+			Enter Youtube  Video link here	
 		</div>
 	  <div class="mb-4 mx-auto text-center">
 		<input class="shadow appearance-none border rounded w-52  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Username">
