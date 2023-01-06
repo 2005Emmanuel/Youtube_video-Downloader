@@ -13,12 +13,24 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+# from django.contrib import admin
+# from django.urls import path, include
+# from Youtubedownloader import views
+# app_name = 'YT-downloader'
+# urlpatterns = [
+#     path('admin/', admin.site.urls),
+#    	path('', views.ytd, name="ytd"),
+#     path('download/', views.download_page, name="download"),
+#     path('download/<res>/', views.success, name="success"),
+#     # path('', views.download_video, name='download_video'),
+#     path('__reload__/', include('django_browser_reload.urls'))
+# ]
+
 from django.contrib import admin
 from django.urls import path, include
-from Youtubedownloader import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path("admin/", admin.site.urls),
     path('', include('Youtubedownloader.urls')),
-    path('__reload__/', include('django_browser_reload.urls'))
+    path('__reload__/', include('django_browser_reload.urls')),
 ]

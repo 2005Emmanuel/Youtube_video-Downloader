@@ -24,7 +24,7 @@ from Youtubedownloader.secret_key import SECRET_KEY
 secret_key = SECRET_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 # ['localhost', '127.0.0.1', '.ngrok.io']
@@ -162,3 +162,4 @@ CSRF_TRUSTED_ORIGINS = [
 
 PYTHON_VERSION = 3.7
 
+APPEND_SLASH=False

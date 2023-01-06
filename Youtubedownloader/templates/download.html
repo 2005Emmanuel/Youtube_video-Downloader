@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ytube download</title>
+	{% load static %}
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+<div class="heading">
+			Download Page
+		</div>
+		<div class="thumbnail">
+			 {% load static %}
+			<img class="thumbnail-image" src="{{thumbnail}}" alt="Error loading thumnnail">
+		</div>
+
+		<div class="ct">
+			Title: {{title}}
+			<br>
+			<br>
+			By: {{author}}
+			<br>
+			<br>
+			Length: {{length}}
+		</div>
+
+		<div class="ct">
+			Choose your prefered attributes from below
+		</div>
+
+		<div class="ct">
+			Only 144, 360 and 720p are included.
+		</div>
+		
+		<table>
+			<thead>
+				<tr class="table-heading">
+					<th scope="col">Attributes</th>
+					<th scope="col">Download</th>
+				</tr>
+			</thead>
+
+			{% for i in onlyres %}
+
+			<tbody>
+				<tr>
+					<td data-label="Attributes">{{i}}</td>
+					<td data-label="Download">
+						<form action="{% url 'Youtubedownloader:success' i %}" method="post">
+							{% csrf_token %}
+							<button type="submit" value="Download" class="download-btn">Download</button>
+						</form>
+					</td>
+				</tr>
+
+				{% endfor %}
+
+			</tbody>
+		</table>

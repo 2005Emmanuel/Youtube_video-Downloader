@@ -1,44 +1,31 @@
 {% load static tailwind_tags %}
 <!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Youtube video downoader</title>
-    {% tailwind_css %}      <!-- loading tailwind css -->
-</head>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	{% load static %}
+    <link  href="{% static "styles.min.css" %}">
+    <title>Ytube download</title>
+	{% tailwind_css %}   
 <body class=' bg-[#03071e] text-white'>
-<nav class="flex items-center justify-between flex-wrap p-6">
-    <div class="flex items-center flex-shrink-0  mr-6">
-        {%load static %}
-        <img class='class="h-auto w-10 mx-auto' src="{% static 'images/youtube-logo-png-31812.png'%}">
-      <span class="font-semibold text-xl tracking-tight ">YTUBE Downloader</span>
-    </div>
-  </nav>
-        <div class="flex flex-col md:flex-row   mx-auto  pr-20 pl-20">
-        <div class="flex  text-center mt-10    mx-auto">
-         <form method="post" action="">
-        {% csrf_token %}
-        {%load static %}
-        <img class='class="h-72 w-72 mx-auto rounded ' src="{% static 'images/youtube-logo-png-31812.png'%}">
-        <h1 class='md:font-bold text-3xl pr-5 px-5 sm:text-7xl font-bold'>Downloader</h1>
-
-        <!-- for fetching the video -->
-        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" name="given_url" value="{{url}}" placeholder="enter url..">
-        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-8" type="submit" name="fetch-vid" value="fetch-vid">Proceed</button>
-        <br>
-            <h3>{{vidTitle}}</h3>
-            <img src="{{vidThumbnail}}"/>   <!-- the image preview of the youtube video tobe downloaded-->
-        <br>
-        <div class="flex flex-col md:flex-row   mx-auto ">
-        <!-- for downloading the video  and resolution-->
-        {% for x in stream %}
-            {{x.resolution}} <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit" name="download-vid" value="{{forloop.counter}}">Download</button>
-        {% endfor %}
-        <br><br>
-        </div>
-    </form>
-</div>
+<div class="mx-auto text-center bg-blue-700 ">
+	{%load static %}
+	<img class='class=" mx-auto ' src="{% static 'images/youtube-logo-png-31812.png'%}" style='width:20%; margin-top:10%;'>
+	<form class="shadow-md rounded px-8 pt-6 pb-8 mb-4   "action="download/" class="search-form" method="get">
+		<div class="heading">
+			Enter Yt Video link here	
+		</div>
+	  <div class="mb-4 mx-auto text-center">
+		<input class="shadow appearance-none border rounded w-52  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Username">
+	  </div>
+	
+	  <div class="flex items-center justify-between ">
+		<button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mx-auto text-center mt-10" type="button">
+		  Enter a link
+		</button>
+	</form>
+  </div>
 </div>
 </body>
-</html>
