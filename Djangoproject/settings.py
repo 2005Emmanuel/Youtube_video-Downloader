@@ -139,8 +139,8 @@ STATIC_URL = 'static/'
 
 # ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-PWA_SERVICE_WORKER_PATH = os.path.join(BASE_DIR, 'Youtubedownloader/static/js', 'serviceworker.js')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+PWA_SERVICE_WORKER_PATH = os.path.join(BASE_DIR, 'Youtubedownloader/static/js', 'serviceworker.js')
 
 #PWA settings
 PWA_APP_NAME = 'Youtubedownloader'
