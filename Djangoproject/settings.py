@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'theme',
     'django_browser_reload',
     'crispy_forms',
+    'pwa',
 ]
 
 TAILWIND_APP_NAME = 'theme'
@@ -138,7 +139,40 @@ STATIC_URL = 'static/'
 
 # ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+PWA_SERVICE_WORKER_PATH = os.path.join(BASE_DIR, 'Youtubedownloader/static/js', 'serviceworker.js')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+#PWA settings
+PWA_APP_NAME = 'Youtubedownloader'
+PWA_APP_DESCRIPTION = "Youtubedownloader PWA"
+PWA_APP_THEME_COLOR = '#000000'
+PWA_APP_BACKGROUND_COLOR = '#ffffff'
+PWA_APP_DISPLAY = 'standalone'
+PWA_APP_SCOPE = '/'
+PWA_APP_ORIENTATION = 'any'
+PWA_APP_START_URL = '/'
+PWA_APP_STATUS_BAR_COLOR = 'default'
+PWA_APP_ICONS = [
+	{
+		'src': 'static\images\youtube-logo-png-31812.png',
+		'sizes': '160x160'
+	}
+]
+PWA_APP_ICONS_APPLE = [
+	{
+		'src': 'static\images\youtube-logo-png-31812.png',
+		'sizes': '160x160'
+	}
+]
+PWA_APP_SPLASH_SCREEN = [
+	{
+		'src': 'static\images\youtube-logo-png-31812.png',
+		'media': '(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)'
+	}
+]
+PWA_APP_DIR = 'ltr'
+PWA_APP_LANG = 'en-US'
+
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 # Default primary key field type

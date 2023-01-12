@@ -1,7 +1,11 @@
+{% load pwa %}
 {% load static tailwind_tags %}
 <!DOCTYPE html>
 <html lang="en">
+	{% load static %}
+	<link rel="manifest" href="/manifest.json">
   <head>
+	{% progressive_web_app_meta %}
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
