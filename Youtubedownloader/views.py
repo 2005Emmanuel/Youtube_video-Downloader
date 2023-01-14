@@ -76,13 +76,13 @@ def success(request, res): #view to download the video it is done with file hand
 	res,b = res.split()
 	size = streams.filter(res=res).first().filesize // 1048576
 	print(size)
-	if request.method == 'POST':
-		streams.filter(res=res).first().download(output_path = dirs, filename = "video.mp4")
-		file = FileWrapper(open(f'{dirs}/video.mp4', 'rb'))
+	if request.method == 'POST' and size < 900:
+		streams.filter(res=res).first().download(output_path = dirs, filename = "{title}.mp4")
+		file = FileWrapper(open(f'{dirs}/{title}.mp4', 'rb'))
 		# path =  '/home/runner/youtube-video-downloader/downloads/video' + '.mp4'
 		# o = dirs + title + '.mp4'
 		response = HttpResponse(file, content_type = 'video/mp4') #vnd.mp4
-		response['Content-Disposition'] = 'attachment; filename = "video.mp4"'
+		response['Content-Disposition'] = 'attachment; filename = "{title}.mp4"'
 		# os.remove(f'{dirs}/video.mp4')
 		return response
 	else:
