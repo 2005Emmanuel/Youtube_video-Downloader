@@ -36,9 +36,11 @@ def download_page(request): #view to get the resolution and url of the page
 
 	except:
 		pass
-
+    
+    
 	for k in range(len(ores)):
 		ores[k] = ores[k] + ' ' + str(streams.filter(res=ores[k]).first().filesize // 1048576) + 'mb'
+  
 	
 	title = yt.title
 	author = yt.author
@@ -74,16 +76,14 @@ def success(request, res): #view to download the video it is done with file hand
 	res,b = res.split()
 	size = streams.filter(res=res).first().filesize // 1048576
 	print(size)
-	if request.method == 'POST' and size < 900:
-		
-		
+	if request.method == 'POST':
 		streams.filter(res=res).first().download(output_path = dirs, filename = "video.mp4")
 		file = FileWrapper(open(f'{dirs}/video.mp4', 'rb'))
 		# path =  '/home/runner/youtube-video-downloader/downloads/video' + '.mp4'
 		# o = dirs + title + '.mp4'
-		response = HttpResponse(file, content_type = 'application/vnd.mp4')
+		response = HttpResponse(file, content_type = 'video/mp4') #vnd.mp4
 		response['Content-Disposition'] = 'attachment; filename = "video.mp4"'
-		os.remove(f'{dirs}/video.mp4')
+		# os.remove(f'{dirs}/video.mp4')
 		return response
 	else:
 		return render(request, 'error.html')
