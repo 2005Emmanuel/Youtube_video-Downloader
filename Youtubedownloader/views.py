@@ -81,7 +81,7 @@ def success(request, res): #view to download the video it is done with file hand
 		file = FileWrapper(open(f'{dirs}/video.mp4', 'rb'))
 		# path =  '/home/runner/youtube-video-downloader/downloads/video' + '.mp4'
 		# o = dirs + title + '.mp4'
-		response = HttpResponse(file, content_type = 'application/vnd.mp4')
+		response = HttpResponse(file, content_type = 'application/video.mp4')
 		response['Content-Disposition'] = 'attachment; filename = "video.mp4"'
 		os.remove(f'{dirs}/video.mp4')
 		return response
