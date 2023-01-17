@@ -44,7 +44,7 @@ def download_page(request): #view to get the resolution and url of the page
 	
 	title = yt.title
 	author = yt.author
-	length = str(yt.length) + ' minutes'
+	length = str(yt.length//100) + ' minutes'
 	if length == 0:
 		length = str(yt.length) + ' seconds'
 
